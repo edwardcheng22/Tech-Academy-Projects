@@ -1,7 +1,7 @@
 # GUI Drill
 # Edward Cheng
 
-import tkinter
+import tkinter 
 from tkinter import *
 
 class ParentWindow(Frame):
@@ -10,30 +10,31 @@ class ParentWindow(Frame):
         Frame.__init__ (self)
 
         self.master = master
-        self.master.geometry("{}x{}".format(600,200))
+        self.master.resizable(width= False, height = False)
+        self.master.geometry("{}x{}".format(500,160))
         self.master.title("Check Files")
-        self.master.config(bg='lightgrey')
+        self.master.config(bg='lightgray')
         
-        self.varBrowseOne = StringVar()
-        self.varBrowseTwo = StringVar()
-
-        #self.txtBrowseOne = Entry(self.master,text= self.varBrowseOne, font=('Helvetica', 16), fg='black', bg='white')
-        #self.BrowseOne.grid(row=5, column=1, padx=(10,0), pady=(10,0))
-
-        #self.txtBrowseTwo = Entry(self.master,text= self.BrowseTwo, font=('Helvetica', 16), fg='black', bg='white')
-        #self.BrowseTwo.grid(row=6, column=1, padx=(10,0), pady=(10,0))                                                    
-
-        self.btnBrowseOne = Button(self.master, text="Browse...", width= 10, height= 2) 
-        self.btnBrowseOne.grid(row=5, column=0, padx=(10,0),pady=(10,0), sticky=NW)
-
-        self.btnBrowseTwo = Button(self.master, text="Browse...", width= 10, height= 2) 
-        self.btnBrowseTwo.grid(row=6, column=0, padx=(10,0),pady=(10,0), sticky=NW)
-
-        self.btnCheckFiles = Button(self.master, text="Check for Files...", width= 11, height = 3)
-        self.btnCheckFiles.grid(row=7,column=0, padx=(10,0),pady=(10,0), sticky=NW)
+    
         
-        self.btnClose = Button(self.master, text="Close Program", width= 11, height= 3)
-        self.btnClose.grid(row=7,column=10, padx=(400,0),pady=(10,0))
+        self.btnBrowseOne = Button(self.master, text="Browse...", width= 15, height= 1) 
+        self.btnBrowseOne.grid(row=10, column=0, padx=(10,0), pady=(35,0), sticky=NW)
+
+        self.btnBrowseTwo = Button(self.master, text="Browse...", width= 15, height= 1) 
+        self.btnBrowseTwo.grid(row=11, column=0, padx=(10,0),pady=(10,0), sticky=NW)
+
+        self.btnCheckFiles = Button(self.master, text="Check for Files...", width= 15, height = 2)
+        self.btnCheckFiles.grid(row=12,column=0, padx=(10,0),pady=(10,0), sticky=NW)
+        
+        self.btnClose = Button(self.master, text="Close Program", width= 15, height= 2)
+        self.btnClose.grid(row=12,column=5, padx=(250,0),pady=(10,0))
+
+        entry_1 = Entry(master)
+        entry_2 = Entry(master)
+
+        entry_1.grid(row = 10, column = 1, columnspan = 5)
+        entry_2.grid(row = 11, column = 1, columnspan =5)
+        
 
     
 
