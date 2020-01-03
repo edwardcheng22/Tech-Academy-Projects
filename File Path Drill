@@ -1,0 +1,18 @@
+# Edward Cheng
+# File Path Output Drill
+# Checks to see if a certain file type exists
+# Then outputs the absolute path of the file name and file path
+# Then obtains the date that the file was created or modified
+
+import os
+import time
+
+# Set current working directory to a variable
+searchdir = "C:/python_text_files/"
+
+# Implement loop that joins the text file names to the absolute path
+for entry in os.listdir(searchdir):
+    if entry.endswith('.txt'):
+        filepath = os.path.join(searchdir, entry)
+        filetime = os.path.getmtime(searchdir)
+        print("The file paths are {} and the dates are {}".format(filepath, filetime))
